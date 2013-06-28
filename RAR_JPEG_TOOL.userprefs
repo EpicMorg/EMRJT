@@ -1,0 +1,29 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RAR_JPEG_TOOL/frm_chalog.resx">
+    <Files>
+      <File FileName="RAR_JPEG_TOOL/frm_main.cs" Line="8" Column="23" />
+      <File FileName="RAR_JPEG_TOOL/frm_main.resx" Line="133" Column="27" />
+      <File FileName="RAR_JPEG_TOOL/frm_chalog.resx" Line="18" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="RJT" expanded="True">
+            <Node name="frm_chalog.cs" expanded="True">
+              <Node name="frm_chalog.resx" selected="True" />
+            </Node>
+            <Node name="frm_main.cs" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
