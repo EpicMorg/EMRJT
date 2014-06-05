@@ -1,5 +1,7 @@
-﻿namespace EmRjt {
-    partial class FrmMain {
+﻿namespace EmRjt
+{
+    partial class FrmMain
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,180 +26,132 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtImg = new System.Windows.Forms.TextBox();
-            this.btnBrowseImg = new System.Windows.Forms.Button();
-            this.chkBuiltinImg = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtOut = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.ofdSourceImg = new System.Windows.Forms.OpenFileDialog();
-            this.ofdSourceFile = new System.Windows.Forms.OpenFileDialog();
-            this.fbdSourceDir = new System.Windows.Forms.FolderBrowserDialog();
-            this.sfdDestImg = new System.Windows.Forms.SaveFileDialog();
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            this.panel_input2 = new System.Windows.Forms.Panel();
+            this.pic_input_status2 = new System.Windows.Forms.PictureBox();
+            this.panel_output = new System.Windows.Forms.Panel();
+            this.pic_output_status = new System.Windows.Forms.PictureBox();
+            this.panel_input1 = new System.Windows.Forms.Panel();
+            this.pic_input_status1 = new System.Windows.Forms.PictureBox();
+            this.panel_input2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status2)).BeginInit();
+            this.panel_output.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_output_status)).BeginInit();
+            this.panel_input1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // panel_input2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Source image";
+            this.panel_input2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel_input2.BackgroundImage = global::EmRjt.Properties.Resources.picture;
+            this.panel_input2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel_input2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_input2.Controls.Add(this.pic_input_status2);
+            this.panel_input2.Location = new System.Drawing.Point(12, 138);
+            this.panel_input2.Name = "panel_input2";
+            this.panel_input2.Size = new System.Drawing.Size(120, 120);
+            this.panel_input2.TabIndex = 1;
             // 
-            // txtImg
+            // pic_input_status2
             // 
-            this.txtImg.Location = new System.Drawing.Point(16, 40);
-            this.txtImg.Name = "txtImg";
-            this.txtImg.Size = new System.Drawing.Size(281, 20);
-            this.txtImg.TabIndex = 1;
+            this.pic_input_status2.Image = global::EmRjt.Properties.Resources.done;
+            this.pic_input_status2.Location = new System.Drawing.Point(97, 3);
+            this.pic_input_status2.Name = "pic_input_status2";
+            this.pic_input_status2.Size = new System.Drawing.Size(16, 16);
+            this.pic_input_status2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pic_input_status2.TabIndex = 1;
+            this.pic_input_status2.TabStop = false;
             // 
-            // btnBrowseImg
+            // panel_output
             // 
-            this.btnBrowseImg.Location = new System.Drawing.Point(318, 40);
-            this.btnBrowseImg.Name = "btnBrowseImg";
-            this.btnBrowseImg.Size = new System.Drawing.Size(75, 20);
-            this.btnBrowseImg.TabIndex = 2;
-            this.btnBrowseImg.Text = "...";
-            this.btnBrowseImg.UseVisualStyleBackColor = true;
-            this.btnBrowseImg.Click += new System.EventHandler(this.button1_Click);
+            this.panel_output.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel_output.BackgroundImage = global::EmRjt.Properties.Resources.rarjpegpic;
+            this.panel_output.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel_output.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_output.Controls.Add(this.pic_output_status);
+            this.panel_output.Location = new System.Drawing.Point(139, 12);
+            this.panel_output.Name = "panel_output";
+            this.panel_output.Size = new System.Drawing.Size(246, 246);
+            this.panel_output.TabIndex = 0;
             // 
-            // chkBuiltinImg
+            // pic_output_status
             // 
-            this.chkBuiltinImg.AutoSize = true;
-            this.chkBuiltinImg.Location = new System.Drawing.Point(414, 40);
-            this.chkBuiltinImg.Name = "chkBuiltinImg";
-            this.chkBuiltinImg.Size = new System.Drawing.Size(87, 17);
-            this.chkBuiltinImg.TabIndex = 3;
-            this.chkBuiltinImg.Text = "1-pixel image";
-            this.chkBuiltinImg.UseVisualStyleBackColor = true;
-            this.chkBuiltinImg.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.pic_output_status.Image = global::EmRjt.Properties.Resources.cancel;
+            this.pic_output_status.Location = new System.Drawing.Point(223, 3);
+            this.pic_output_status.Name = "pic_output_status";
+            this.pic_output_status.Size = new System.Drawing.Size(16, 16);
+            this.pic_output_status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pic_output_status.TabIndex = 1;
+            this.pic_output_status.TabStop = false;
             // 
-            // label2
+            // panel_input1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Source file/directory";
+            this.panel_input1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel_input1.BackgroundImage = global::EmRjt.Properties.Resources.archive;
+            this.panel_input1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel_input1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_input1.Controls.Add(this.pic_input_status1);
+            this.panel_input1.ForeColor = System.Drawing.Color.Black;
+            this.panel_input1.Location = new System.Drawing.Point(12, 12);
+            this.panel_input1.Name = "panel_input1";
+            this.panel_input1.Size = new System.Drawing.Size(120, 120);
+            this.panel_input1.TabIndex = 0;
             // 
-            // txtData
+            // pic_input_status1
             // 
-            this.txtData.Location = new System.Drawing.Point(16, 113);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(281, 20);
-            this.txtData.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Destination";
-            // 
-            // txtOut
-            // 
-            this.txtOut.Location = new System.Drawing.Point(16, 186);
-            this.txtOut.Name = "txtOut";
-            this.txtOut.Size = new System.Drawing.Size(281, 20);
-            this.txtOut.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(318, 113);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 20);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "File";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(414, 113);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 20);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Folder";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(16, 236);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(473, 40);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Merge!";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(318, 186);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 19);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "...";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // ofdSourceFile
-            // 
-            this.ofdSourceFile.FileName = "openFileDialog1";
+            this.pic_input_status1.Image = global::EmRjt.Properties.Resources.cancel;
+            this.pic_input_status1.Location = new System.Drawing.Point(97, 3);
+            this.pic_input_status1.Name = "pic_input_status1";
+            this.pic_input_status1.Size = new System.Drawing.Size(16, 16);
+            this.pic_input_status1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pic_input_status1.TabIndex = 0;
+            this.pic_input_status1.TabStop = false;
             // 
             // FrmMain
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 288);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtOut);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtData);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.chkBuiltinImg);
-            this.Controls.Add(this.btnBrowseImg);
-            this.Controls.Add(this.txtImg);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(397, 270);
+            this.Controls.Add(this.panel_input2);
+            this.Controls.Add(this.panel_output);
+            this.Controls.Add(this.panel_input1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(413, 309);
+            this.MinimumSize = new System.Drawing.Size(413, 309);
             this.Name = "FrmMain";
-            this.Text = "EMRJT";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "EpicMorg: RarJpeg Tool";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.Click += new System.EventHandler(this.FrmMain_Click);
+            this.panel_input2.ResumeLayout(false);
+            this.panel_input2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status2)).EndInit();
+            this.panel_output.ResumeLayout(false);
+            this.panel_output.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_output_status)).EndInit();
+            this.panel_input1.ResumeLayout(false);
+            this.panel_input1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtImg;
-        private System.Windows.Forms.Button btnBrowseImg;
-        private System.Windows.Forms.CheckBox chkBuiltinImg;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtData;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtOut;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.OpenFileDialog ofdSourceImg;
-        private System.Windows.Forms.OpenFileDialog ofdSourceFile;
-        private System.Windows.Forms.FolderBrowserDialog fbdSourceDir;
-        private System.Windows.Forms.SaveFileDialog sfdDestImg;
+        private System.Windows.Forms.Panel panel_input1;
+        private System.Windows.Forms.Panel panel_input2;
+        private System.Windows.Forms.Panel panel_output;
+        private System.Windows.Forms.PictureBox pic_input_status1;
+        private System.Windows.Forms.PictureBox pic_input_status2;
+        private System.Windows.Forms.PictureBox pic_output_status;
     }
 }
-

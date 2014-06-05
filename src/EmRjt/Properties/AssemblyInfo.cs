@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EmRjt")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("EpicMorg: RarJpeg Tool [Reloaded]")]
+[assembly: AssemblyDescription("EpicMorg: RarJpeg Tool [Reloaded]")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EmRjt")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("EpicMorg")]
+[assembly: AssemblyProduct("RarJpeg Tool [Reloaded]")]
+[assembly: AssemblyCopyright("Copyright © EpicMorg 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
