@@ -30,7 +30,12 @@ namespace EmRjt
     {
         public FrmMain()
         {
-           InitializeComponent();  
+           InitializeComponent();
+           panel_input1.AllowDrop = true;
+           panel_input1.DragEnter += this.panel_input1_DragEnter;
+           panel_input1.DragDrop += this.panel_input1_DragDrop;
+           panel_input2.DragEnter += this.panel_input2_DragEnter;
+           panel_input2.DragDrop += this.panel_input2_DragDrop;
         }
   
         private void FrmMain_Load(object sender, EventArgs e)
@@ -38,9 +43,55 @@ namespace EmRjt
 
         }
 
+        private void panel_input1_DragEnter(object sender, DragEventArgs e)
+        {
+            if ( e.Data.GetDataPresent( DataFormats.FileDrop )
+                 && ( ( e.AllowedEffect & DragDropEffects.Move ) == DragDropEffects.Move ) ) 
+                e.Effect = DragDropEffects.Move;
+           
+        }
+
+        private void panel_input1_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop) && e.Effect == DragDropEffects.Move)
+            {
+                string[] objects = (string[])e.Data.GetData(DataFormats.FileDrop);
+                pic_input_status1.Image = Properties.Resources.done;
+                // В objects хранятся пути к папкам и файлам
+                panel_input1.Text = null;
+                for (int i = 0; i < objects.Length; i++)
+                    panel_input1.Text += objects[i] + "\r\n";
+            }   
+            else { pic_input_status1.Image = Properties.Resources.cancel; }
+        }
+
+        private void panel_input2_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)
+                 && ((e.AllowedEffect & DragDropEffects.Move) == DragDropEffects.Move))
+                e.Effect = DragDropEffects.Move;
+
+        }
+
+        private void panel_input2_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop) && e.Effect == DragDropEffects.Move)
+            {
+                string[] objects = (string[])e.Data.GetData(DataFormats.FileDrop);
+                pic_input_status2.Image = Properties.Resources.done;
+                // В objects хранятся пути к папкам и файлам
+                panel_input2.Text = null;
+                for (int i = 0; i < objects.Length; i++)
+                    panel_input2.Text += objects[i] + "\r\n";
+            }
+            else { pic_input_status2.Image = Properties.Resources.cancel; }
+        }
+
+
         private void FrmMain_Click( object sender, EventArgs e ) {
             var frmabout = new FrmAbout();
             frmabout.ShowDialog();
         }
+         
     }
 }

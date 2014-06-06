@@ -32,6 +32,7 @@
             this.panel_input2 = new System.Windows.Forms.Panel();
             this.pic_input_status2 = new System.Windows.Forms.PictureBox();
             this.panel_output = new System.Windows.Forms.Panel();
+            this.progressbar_output = new System.Windows.Forms.ProgressBar();
             this.pic_output_status = new System.Windows.Forms.PictureBox();
             this.panel_input1 = new System.Windows.Forms.Panel();
             this.pic_input_status1 = new System.Windows.Forms.PictureBox();
@@ -45,6 +46,7 @@
             // 
             // panel_input2
             // 
+            this.panel_input2.AllowDrop = true;
             this.panel_input2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel_input2.BackgroundImage = global::EmRjt.Properties.Resources.picture;
             this.panel_input2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -57,7 +59,7 @@
             // 
             // pic_input_status2
             // 
-            this.pic_input_status2.Image = global::EmRjt.Properties.Resources.done;
+            this.pic_input_status2.Image = global::EmRjt.Properties.Resources.cancel;
             this.pic_input_status2.Location = new System.Drawing.Point(97, 3);
             this.pic_input_status2.Name = "pic_input_status2";
             this.pic_input_status2.Size = new System.Drawing.Size(16, 16);
@@ -71,11 +73,20 @@
             this.panel_output.BackgroundImage = global::EmRjt.Properties.Resources.rarjpegpic;
             this.panel_output.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel_output.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_output.Controls.Add(this.progressbar_output);
             this.panel_output.Controls.Add(this.pic_output_status);
             this.panel_output.Location = new System.Drawing.Point(139, 12);
             this.panel_output.Name = "panel_output";
             this.panel_output.Size = new System.Drawing.Size(246, 246);
             this.panel_output.TabIndex = 0;
+            // 
+            // progressbar_output
+            // 
+            this.progressbar_output.ForeColor = System.Drawing.Color.Lime;
+            this.progressbar_output.Location = new System.Drawing.Point(77, 171);
+            this.progressbar_output.Name = "progressbar_output";
+            this.progressbar_output.Size = new System.Drawing.Size(87, 16);
+            this.progressbar_output.TabIndex = 2;
             // 
             // pic_output_status
             // 
@@ -89,6 +100,7 @@
             // 
             // panel_input1
             // 
+            this.panel_input1.AllowDrop = true;
             this.panel_input1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel_input1.BackgroundImage = global::EmRjt.Properties.Resources.archive;
             this.panel_input1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -153,5 +165,6 @@
         private System.Windows.Forms.PictureBox pic_input_status1;
         private System.Windows.Forms.PictureBox pic_input_status2;
         private System.Windows.Forms.PictureBox pic_output_status;
+        private System.Windows.Forms.ProgressBar progressbar_output;
     }
 }
