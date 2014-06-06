@@ -29,43 +29,46 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.panel_input2 = new System.Windows.Forms.Panel();
-            this.pic_input_status2 = new System.Windows.Forms.PictureBox();
+            this.p2 = new System.Windows.Forms.Panel();
+            this.s2 = new System.Windows.Forms.PictureBox();
             this.panel_output = new System.Windows.Forms.Panel();
             this.progressbar_output = new System.Windows.Forms.ProgressBar();
-            this.pic_output_status = new System.Windows.Forms.PictureBox();
-            this.panel_input1 = new System.Windows.Forms.Panel();
-            this.pic_input_status1 = new System.Windows.Forms.PictureBox();
-            this.panel_input2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status2)).BeginInit();
+            this.pOS = new System.Windows.Forms.PictureBox();
+            this.p1 = new System.Windows.Forms.Panel();
+            this.s1 = new System.Windows.Forms.PictureBox();
+            this.sfdOut = new System.Windows.Forms.SaveFileDialog();
+            this.p2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.s2)).BeginInit();
             this.panel_output.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_output_status)).BeginInit();
-            this.panel_input1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pOS)).BeginInit();
+            this.p1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.s1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_input2
             // 
-            this.panel_input2.AllowDrop = true;
-            this.panel_input2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel_input2.BackgroundImage = global::EmRjt.Properties.Resources.picture;
-            this.panel_input2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel_input2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_input2.Controls.Add(this.pic_input_status2);
-            this.panel_input2.Location = new System.Drawing.Point(12, 138);
-            this.panel_input2.Name = "panel_input2";
-            this.panel_input2.Size = new System.Drawing.Size(120, 120);
-            this.panel_input2.TabIndex = 1;
+            this.p2.AllowDrop = true;
+            this.p2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.p2.BackgroundImage = global::EmRjt.Properties.Resources.picture;
+            this.p2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.p2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.p2.Controls.Add(this.s2);
+            this.p2.Location = new System.Drawing.Point(12, 138);
+            this.p2.Name = "panel_input2";
+            this.p2.Size = new System.Drawing.Size(120, 120);
+            this.p2.TabIndex = 1;
+            this.p2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel_input2_DragDrop);
+            this.p2.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel_input2_DragEnter);
             // 
             // pic_input_status2
             // 
-            this.pic_input_status2.Image = global::EmRjt.Properties.Resources.cancel;
-            this.pic_input_status2.Location = new System.Drawing.Point(97, 3);
-            this.pic_input_status2.Name = "pic_input_status2";
-            this.pic_input_status2.Size = new System.Drawing.Size(16, 16);
-            this.pic_input_status2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pic_input_status2.TabIndex = 1;
-            this.pic_input_status2.TabStop = false;
+            this.s2.Image = global::EmRjt.Properties.Resources.cancel;
+            this.s2.Location = new System.Drawing.Point(97, 3);
+            this.s2.Name = "pic_input_status2";
+            this.s2.Size = new System.Drawing.Size(16, 16);
+            this.s2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.s2.TabIndex = 1;
+            this.s2.TabStop = false;
             // 
             // panel_output
             // 
@@ -74,11 +77,12 @@
             this.panel_output.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel_output.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_output.Controls.Add(this.progressbar_output);
-            this.panel_output.Controls.Add(this.pic_output_status);
+            this.panel_output.Controls.Add(this.pOS);
             this.panel_output.Location = new System.Drawing.Point(139, 12);
             this.panel_output.Name = "panel_output";
             this.panel_output.Size = new System.Drawing.Size(246, 246);
             this.panel_output.TabIndex = 0;
+            this.panel_output.Click += new System.EventHandler(this.panel_output_Click);
             // 
             // progressbar_output
             // 
@@ -90,37 +94,39 @@
             // 
             // pic_output_status
             // 
-            this.pic_output_status.Image = global::EmRjt.Properties.Resources.cancel;
-            this.pic_output_status.Location = new System.Drawing.Point(223, 3);
-            this.pic_output_status.Name = "pic_output_status";
-            this.pic_output_status.Size = new System.Drawing.Size(16, 16);
-            this.pic_output_status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pic_output_status.TabIndex = 1;
-            this.pic_output_status.TabStop = false;
+            this.pOS.Image = global::EmRjt.Properties.Resources.cancel;
+            this.pOS.Location = new System.Drawing.Point(223, 3);
+            this.pOS.Name = "pic_output_status";
+            this.pOS.Size = new System.Drawing.Size(16, 16);
+            this.pOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pOS.TabIndex = 1;
+            this.pOS.TabStop = false;
             // 
             // panel_input1
             // 
-            this.panel_input1.AllowDrop = true;
-            this.panel_input1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel_input1.BackgroundImage = global::EmRjt.Properties.Resources.archive;
-            this.panel_input1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel_input1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_input1.Controls.Add(this.pic_input_status1);
-            this.panel_input1.ForeColor = System.Drawing.Color.Black;
-            this.panel_input1.Location = new System.Drawing.Point(12, 12);
-            this.panel_input1.Name = "panel_input1";
-            this.panel_input1.Size = new System.Drawing.Size(120, 120);
-            this.panel_input1.TabIndex = 0;
+            this.p1.AllowDrop = true;
+            this.p1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.p1.BackgroundImage = global::EmRjt.Properties.Resources.archive;
+            this.p1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.p1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.p1.Controls.Add(this.s1);
+            this.p1.ForeColor = System.Drawing.Color.Black;
+            this.p1.Location = new System.Drawing.Point(12, 12);
+            this.p1.Name = "panel_input1";
+            this.p1.Size = new System.Drawing.Size(120, 120);
+            this.p1.TabIndex = 0;
+            this.p1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel_input1_DragDrop);
+            this.p1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel_input1_DragEnter);
             // 
             // pic_input_status1
             // 
-            this.pic_input_status1.Image = global::EmRjt.Properties.Resources.cancel;
-            this.pic_input_status1.Location = new System.Drawing.Point(97, 3);
-            this.pic_input_status1.Name = "pic_input_status1";
-            this.pic_input_status1.Size = new System.Drawing.Size(16, 16);
-            this.pic_input_status1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pic_input_status1.TabIndex = 0;
-            this.pic_input_status1.TabStop = false;
+            this.s1.Image = global::EmRjt.Properties.Resources.cancel;
+            this.s1.Location = new System.Drawing.Point(97, 3);
+            this.s1.Name = "pic_input_status1";
+            this.s1.Size = new System.Drawing.Size(16, 16);
+            this.s1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.s1.TabIndex = 0;
+            this.s1.TabStop = false;
             // 
             // FrmMain
             // 
@@ -129,9 +135,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(397, 270);
-            this.Controls.Add(this.panel_input2);
+            this.Controls.Add(this.p2);
             this.Controls.Add(this.panel_output);
-            this.Controls.Add(this.panel_input1);
+            this.Controls.Add(this.p1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -144,27 +150,28 @@
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Click += new System.EventHandler(this.FrmMain_Click);
-            this.panel_input2.ResumeLayout(false);
-            this.panel_input2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status2)).EndInit();
+            this.p2.ResumeLayout(false);
+            this.p2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.s2)).EndInit();
             this.panel_output.ResumeLayout(false);
             this.panel_output.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_output_status)).EndInit();
-            this.panel_input1.ResumeLayout(false);
-            this.panel_input1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_input_status1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pOS)).EndInit();
+            this.p1.ResumeLayout(false);
+            this.p1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.s1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_input1;
-        private System.Windows.Forms.Panel panel_input2;
+        private System.Windows.Forms.Panel p1;
+        private System.Windows.Forms.Panel p2;
         private System.Windows.Forms.Panel panel_output;
-        private System.Windows.Forms.PictureBox pic_input_status1;
-        private System.Windows.Forms.PictureBox pic_input_status2;
-        private System.Windows.Forms.PictureBox pic_output_status;
+        private System.Windows.Forms.PictureBox s1;
+        private System.Windows.Forms.PictureBox s2;
+        private System.Windows.Forms.PictureBox pOS;
         private System.Windows.Forms.ProgressBar progressbar_output;
+        private System.Windows.Forms.SaveFileDialog sfdOut;
     }
 }

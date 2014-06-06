@@ -71,6 +71,8 @@
     <Compile Include="FrmMain_dev.Designer.cs">
       <DependentUpon>FrmMain_dev.cs</DependentUpon>
     </Compile>
+    <Compile Include="MergeParams.cs" />
+    <Compile Include="Merger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAbout.resx">
@@ -106,10 +108,8 @@
     <None Include="Resources\pixel" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\EMRJT_back.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="res\wait.png" />
     <None Include="res\about.png" />
     <None Include="res\rarjpegpic.png" />
     <None Include="res\picture.png" />

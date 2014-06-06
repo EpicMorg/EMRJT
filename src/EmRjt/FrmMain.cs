@@ -20,78 +20,107 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.", @"The MIT License (MIT)
 *************************************************************************************
-*/ 
-using System; 
+*/
+
+using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using EmRjt.Properties;
+using ICSharpCode.SharpZipLib.Zip;
 
-namespace EmRjt
-{
-    public partial class FrmMain : Form
-    {
-        public FrmMain()
-        {
-           InitializeComponent();
-           panel_input1.AllowDrop = true;
-           panel_input1.DragEnter += this.panel_input1_DragEnter;
-           panel_input1.DragDrop += this.panel_input1_DragDrop;
-           panel_input2.DragEnter += this.panel_input2_DragEnter;
-           panel_input2.DragDrop += this.panel_input2_DragDrop;
+namespace EmRjt {
+    public partial class FrmMain : Form {
+        public FrmMain() { this.InitializeComponent(); }
+
+        private void Add( Panel panel, PictureBox status, string[] extensions, string errorMessage, DragEventArgs e ) {
+            if ( !e.Data.GetDataPresent( DataFormats.FileDrop )
+                 || e.Effect != DragDropEffects.Move )
+                return;
+            var objects = (string[]) e.Data.GetData( DataFormats.FileDrop );
+            status.Image = Resources.wait;
+            panel.Text = string.Empty;
+            if ( !objects.Any() )
+                return;
+            var obj = objects.Last();
+            var ext = Path.GetExtension( obj ).TrimStart( '.' );
+            panel.Tag = obj;
+            var ok = !extensions.Any() || extensions.Contains( ext );
+            if ( !ok )
+                MessageBox.Show( errorMessage, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
+            status.Image = this.GetDone( ok );
+            status.Tag = ok;
         }
-  
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
 
+        private Image GetDone( bool ok ) {
+            return ok ? Resources.done : Resources.cancel;
         }
 
-        private void panel_input1_DragEnter(object sender, DragEventArgs e)
-        {
+        private bool CheckInput( bool repaint = true ) {
+            var ok = this.s1.Tag != null && this.s2.Tag != null && (bool) this.s1.Tag && (bool) this.s2.Tag;
+            if ( repaint )
+                this.pOS.Image = this.GetDone( ok );
+            return ok;
+        }
+
+        private void FrmMain_Load( object sender, EventArgs e ) { }
+
+        private void panel_input1_DragEnter( object sender, DragEventArgs e ) {
             if ( e.Data.GetDataPresent( DataFormats.FileDrop )
-                 && ( ( e.AllowedEffect & DragDropEffects.Move ) == DragDropEffects.Move ) ) 
+                 && ( ( e.AllowedEffect & DragDropEffects.Move ) == DragDropEffects.Move ) )
                 e.Effect = DragDropEffects.Move;
-           
         }
 
-        private void panel_input1_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop) && e.Effect == DragDropEffects.Move)
-            {
-                string[] objects = (string[])e.Data.GetData(DataFormats.FileDrop);
-                pic_input_status1.Image = Properties.Resources.done;
-                // В objects хранятся пути к папкам и файлам
-                panel_input1.Text = null;
-                for (int i = 0; i < objects.Length; i++)
-                    panel_input1.Text += objects[i] + "\r\n";
-            }   
-            else { pic_input_status1.Image = Properties.Resources.cancel; }
-        }
-
-        private void panel_input2_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)
-                 && ((e.AllowedEffect & DragDropEffects.Move) == DragDropEffects.Move))
+        private void panel_input2_DragEnter( object sender, DragEventArgs e ) {
+            if ( e.Data.GetDataPresent( DataFormats.FileDrop )
+                 && ( ( e.AllowedEffect & DragDropEffects.Move ) == DragDropEffects.Move ) )
                 e.Effect = DragDropEffects.Move;
-
         }
 
-        private void panel_input2_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop) && e.Effect == DragDropEffects.Move)
-            {
-                string[] objects = (string[])e.Data.GetData(DataFormats.FileDrop);
-                pic_input_status2.Image = Properties.Resources.done;
-                // В objects хранятся пути к папкам и файлам
-                panel_input2.Text = null;
-                for (int i = 0; i < objects.Length; i++)
-                    panel_input2.Text += objects[i] + "\r\n";
-            }
-            else { pic_input_status2.Image = Properties.Resources.cancel; }
+        private void panel_input1_DragDrop( object sender, DragEventArgs e ) {
+            this.Add( this.p1, this.s1, new[] {
+                "rar", "zip", "jar", "7zip"
+            }, @"Please, drag valid archive file!", e );
+
+            this.CheckInput();
         }
 
+        private void panel_input2_DragDrop( object sender, DragEventArgs e ) {
+            this.Add( this.p2, this.s2, new[] {
+                "jpg", "jpeg", "bmp", "png", "gif"
+            }, @"Please, drag valid image file!", e );
+
+            this.CheckInput();
+        }
 
         private void FrmMain_Click( object sender, EventArgs e ) {
             var frmabout = new FrmAbout();
             frmabout.ShowDialog();
         }
-         
+
+        private async void panel_output_Click( object sender, EventArgs e ) {
+            if ( !this.CheckInput( false ) )
+                return;
+            this.sfdOut.DefaultExt = this.p1.Tag as string;
+            if ( this.sfdOut.ShowDialog() != DialogResult.OK )
+                return;
+            this.SetLocked( false );
+            this.SetStatusImage( false );
+            await Merger.Merge( new MergeParams {
+                BuiltInImg = false, DataSource = this.p1.Tag as string, DestImg = this.sfdOut.FileName, SourceImg = this.p2.Tag as string
+            } );
+            this.SetStatusImage(true);
+            this.SetLocked( true );
+        }
+
+        private void SetStatusImage( bool ok ) {
+            this.pOS.Image = ok ? Resources.done : Resources.wait;
+            
+        }
+
+        private void SetLocked( bool state ) {
+            this.p1.Enabled = this.p2.Enabled = this.panel_output.Enabled = state;
+        }
     }
 }
