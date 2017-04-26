@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EMGRJT.Properties {
+namespace EMGRJT.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EMGRJT.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Translation {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Translation() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EMGRJT.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EMGRJT.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EMGRJT.Resources.Translation", typeof(Translation).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,82 +61,65 @@ namespace EMGRJT.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на 1. Drag archive here.
         /// </summary>
-        internal static System.Drawing.Bitmap about {
+        internal static string msgArchHelp {
             get {
-                object obj = ResourceManager.GetObject("about", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgArchHelp", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на Done.
         /// </summary>
-        internal static System.Drawing.Bitmap archive {
+        internal static string msgDone {
             get {
-                object obj = ResourceManager.GetObject("archive", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgDone", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на Error.
         /// </summary>
-        internal static System.Drawing.Bitmap cancel {
+        internal static string msgError {
             get {
-                object obj = ResourceManager.GetObject("cancel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgError", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на 2. Drag picture here.
         /// </summary>
-        internal static System.Drawing.Bitmap done {
+        internal static string msgPicHelp {
             get {
-                object obj = ResourceManager.GetObject("done", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgPicHelp", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на 3. Get RarJpeg here.
         /// </summary>
-        internal static System.Drawing.Bitmap picture {
+        internal static string msgRarJpegHelp {
             get {
-                object obj = ResourceManager.GetObject("picture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgRarJpegHelp", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
+        ///   Ищет локализованную строку, похожую на Please, drag valid archive file!.
         /// </summary>
-        internal static byte[] pixel {
+        internal static string msgSelectArchive {
             get {
-                object obj = ResourceManager.GetObject("pixel", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("msgSelectArchive", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на Please, drag valid image file!.
         /// </summary>
-        internal static System.Drawing.Bitmap rarjpegpic {
+        internal static string msgSelectPic {
             get {
-                object obj = ResourceManager.GetObject("rarjpegpic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap wait {
-            get {
-                object obj = ResourceManager.GetObject("wait", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("msgSelectPic", resourceCulture);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace EmRjt
+﻿namespace EMGRJT
 {
     partial class FrmAbout
     {
@@ -50,7 +50,7 @@
             // 
             // pic_logo
             // 
-            this.pic_logo.Image = global::EmRjt.Properties.Resources.rarjpegpic;
+            this.pic_logo.Image = global::EMGRJT.Properties.Resources.rarjpegpic;
             this.pic_logo.Location = new System.Drawing.Point(12, 12);
             this.pic_logo.Name = "pic_logo";
             this.pic_logo.Size = new System.Drawing.Size(96, 96);
@@ -118,7 +118,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EpicMorg: RarJpeg Tool";
-             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.Load += new System.EventHandler(this.FrmAbout_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

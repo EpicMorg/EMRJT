@@ -3,7 +3,7 @@
 Tis file is distributed under MIT license:
 *************************************************************************************
 The MIT License (MIT)
-Copyright © 2013-2014 EpicMorg
+Copyright © 2013-2017 EpicMorg
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the ''Software''), to deal
 in the Software without restriction, including without limitation the rights
@@ -20,22 +20,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.", @"The MIT License (MIT)
 *************************************************************************************
-*/ 
+*/
+
 using System;
 using System.Diagnostics;
-using System.Windows.Forms;
 using System.Reflection;
+using System.Windows.Forms;
 
-namespace EmRjt
+namespace EMGRJT
 {
     public partial class FrmAbout : Form
     {
         public FrmAbout()
         {
             InitializeComponent();
-            this.lbl_ver.Text = String.Format("{0}", AssemblyVersion);
-            this.lbl_title.Text = AssemblyProduct;
-            this.lbl_copy.Text = AssemblyCopyright;
+            lbl_ver.Text = String.Format("{0}", AssemblyVersion);
+            lbl_title.Text = AssemblyProduct;
+            lbl_copy.Text = AssemblyCopyright;
         }
 
         #region Методы доступа к атрибутам сборки
@@ -78,9 +79,14 @@ namespace EmRjt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
          
         private void lbl_copy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) { Process.Start( "http://epicm.org/" ); }
+
+        private void FrmAbout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
